@@ -1,0 +1,32 @@
+<p class='pull-right'>
+  [<%= link_to 'Edit post', edit_post_path(@post) %>]
+</p>
+
+<p>
+  <%= render @post.categories %>
+</p>
+
+<%= render 'shared/content_title', title: link_to(@post.title, "http://#{@post.url}") %>
+
+<p>
+  <%= @post.description %>
+    <hr/>
+</p>
+
+<h4>Create a comment:</h4>
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <br/>
+  <%= f.submit 'Add Comment', class: 'btn brn-primary' %>
+<% end %>
+
+<% if @post.comments.any? %>
+  <div class="row">
+    <div class='span8 well'>
+  <% @post.comments.each do |comment| %>
+      <em>"<%= comment.body %>"</em>
+  <% end %>
+    </div>
+  </div>
+<% end %>
