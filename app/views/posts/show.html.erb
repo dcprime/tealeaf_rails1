@@ -10,23 +10,33 @@
 
 <p>
   <%= @post.description %>
-    <hr/>
 </p>
-
-<h4>Create a comment:</h4>
-<%= form_for [@post, @comment] do |f| %>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-  <br/>
-  <%= f.submit 'Add Comment', class: 'btn brn-primary' %>
-<% end %>
+<hr/>
 
 <% if @post.comments.any? %>
+  <h4>Comments:</h4>
+  <% @post.comments.each do |comment| %>
   <div class="row">
     <div class='span8 well'>
-  <% @post.comments.each do |comment| %>
       <em>"<%= comment.body %>"</em>
-  <% end %>
+      <br/>
+      <span class='quiet'>posted by</span> <%= comment.creator.username %>
+      <small>at <%= comment.created_at %></small>
     </div>
+  </div>
+  <% end %>
+  <% else %>
+  <h4>No Comments</h4>
+<% end %>
+
+<br/>
+
+<%= form_for [@post, @comment] do |f| %>
+  <%= render 'shared/errors', obj: @comment %>
+  <div class='control-group'>
+    <%= f.label :body, 'Add a comment' %>
+    <%= f.text_area :body, rows: 3, class: 'span4' %>
+    <br/>
+    <%= f.submit 'Add Comment', class: 'btn brn-primary' %>
   </div>
 <% end %>
