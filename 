@@ -1,0 +1,13 @@
+
+[1mFrom:[0m /home/action/workspace/tealeaf_rails1/app/controllers/posts_controller.rb @ line 33 PostsController#update:
+
+    [1;34m32[0m: [1;31mdef[0m [1;34mupdate[0m
+ => [1;34m33[0m:   binding.pry
+    [1;34m34[0m:   [1;31mif[0m @post.update(post_params)
+    [1;34m35[0m:     flash[[1;32m:notice[0m] = [32m[1;32m"[0m[32mYour post was updated[1;32m"[0m[32m[0m
+    [1;34m36[0m:     redirect_to posts_path
+    [1;34m37[0m:   [1;31melse[0m
+    [1;34m38[0m:     render [32m[1;32m'[0m[32medit[1;32m'[0m[32m[0m
+    [1;34m39[0m:   [1;31mend[0m
+    [1;34m40[0m: [1;31mend[0m
+
