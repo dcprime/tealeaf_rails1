@@ -25,6 +25,16 @@
 <div class='nav_item'>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-primary btn-small' %> 
 </div>
-<div class='nav_item'>
-  <%= link_to 'Register', register_path, class: 'btn btn-success btn-small' %> 
-</div>
+
+<% if logged_in? %>
+  <div class='nav_item'>
+    <%= link_to 'Log out', logout_path, class: 'btn btn-info btn-small' %>
+  </div>
+<% else %>
+  <div class='nav_item'>
+    <%= link_to 'Login', login_path, class: 'btn btn-info btn-small' %> 
+  </div>
+  <div class='nav_item'>
+    <%= link_to 'Register', register_path, class: 'btn btn-success btn-small' %> 
+  </div>
+<% end %>

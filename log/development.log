@@ -23829,3 +23829,1000 @@ Processing by PostsController#index as HTML
   Rendered layouts/_navigation.html.erb (107.0ms)
   Rendered layouts/_messages.html.erb (0.7ms)
 Completed 200 OK in 406ms (Views: 367.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:36:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.4ms)
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mCategory Load (2.9ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered categories/_category.html.erb (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (93.2ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (5.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.5ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.6ms)
+  Rendered posts/index.html.erb within layouts/application (144.0ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 307ms (Views: 267.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/register" for 24.212.143.126 at 2014-08-19 15:36:06 +0000
+Processing by UsersController#new as HTML
+  Rendered shared/_content_title.html.erb (0.4ms)
+  Rendered shared/_errors.html.erb (3.1ms)
+  Rendered users/_form.html.erb (23.6ms)
+  Rendered users/new.html.erb within layouts/application (26.8ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for 24.212.143.126 at 2014-08-19 15:36:08 +0000
+Processing by PostsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered shared/_errors.html.erb (0.1ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.erb (16.5ms)
+  Rendered posts/new.html.erb within layouts/application (19.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:36:11 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (6.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.8ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (5.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (5.2ms)
+  Rendered posts/index.html.erb within layouts/application (28.6ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:39:39 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.6ms)
+  Rendered posts/index.html.erb within layouts/application (23.5ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/login" for 24.212.143.126 at 2014-08-19 15:39:40 +0000
+Processing by SessionsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 24.212.143.126 at 2014-08-19 15:39:49 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gXavDADsEqDfF1rA8r+h3I9PxmY4pPjDDVYQrzGrreQ=", "username"=>"Darren", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'Darren' LIMIT 1
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/
+Completed 302 Found in 99ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:39:49 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.5ms)
+  Rendered posts/index.html.erb within layouts/application (23.9ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:48:53 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (77.8ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.6ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.1ms)
+  Rendered posts/index.html.erb within layouts/application (116.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 140ms (Views: 128.3ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:48:55 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.6ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.6ms)
+  Rendered posts/index.html.erb within layouts/application (24.8ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:48:56 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.7ms)
+  Rendered posts/index.html.erb within layouts/application (24.9ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:52:55 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (53.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.6ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  Rendered posts/index.html.erb within layouts/application (93.3ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 119ms (Views: 107.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/login" for 24.212.143.126 at 2014-08-19 15:53:01 +0000
+Processing by SessionsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 24.212.143.126 at 2014-08-19 15:53:08 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eujKkK9Me0v42EyZa8JbkHidhiLK9LwqLfCoiooUceU=", "username"=>"Darren", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'Darren' LIMIT 1
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/
+Completed 302 Found in 97ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:53:08 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (4.8ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (5.3ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.9ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.1ms)
+  Rendered posts/index.html.erb within layouts/application (24.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 38.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/logout" for 24.212.143.126 at 2014-08-19 15:53:18 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:53:18 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  Rendered posts/index.html.erb within layouts/application (24.3ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/login" for 24.212.143.126 at 2014-08-19 15:53:38 +0000
+Processing by SessionsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 24.212.143.126 at 2014-08-19 15:53:43 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eujKkK9Me0v42EyZa8JbkHidhiLK9LwqLfCoiooUceU=", "username"=>"Larissa", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'Larissa' LIMIT 1
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 115ms (Views: 18.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/login" for 24.212.143.126 at 2014-08-19 15:53:51 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eujKkK9Me0v42EyZa8JbkHidhiLK9LwqLfCoiooUceU=", "username"=>"Larissa", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'Larissa' LIMIT 1
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/
+Completed 302 Found in 101ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:53:52 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.6ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.6ms)
+  Rendered posts/index.html.erb within layouts/application (24.8ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:55:39 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (52.4ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.8ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  Rendered posts/index.html.erb within layouts/application (90.4ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (29.7ms)
+Completed 500 Internal Server Error in 146ms
+
+ActionView::Template::Error (undefined method `logged_in?' for #<#<Class:0x007f8d40048c68>:0x007f8d40048060>):
+    26:   <%= link_to 'New Post', new_post_path, class: 'btn btn-primary btn-small' %> 
+    27: </div>
+    28: 
+    29: <% if logged_in? %>
+    30:   <div class='nav_item'>
+    31:     <%= link_to 'Log out', logout_path, class: 'btn btn-info btn-small' %>
+    32:   </div>
+  app/views/layouts/_navigation.html.erb:29:in `_app_views_layouts__navigation_html_erb__1137188846494323785_70122494643940'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__4052990896050823374_70122602629240'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (30.2ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:55:39 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (12.5ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.5ms)
+  Rendered posts/index.html.erb within layouts/application (30.6ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (16.6ms)
+Completed 500 Internal Server Error in 61ms
+
+ActionView::Template::Error (undefined method `logged_in?' for #<#<Class:0x007f8d40048c68>:0x007f8d54c8b4f8>):
+    26:   <%= link_to 'New Post', new_post_path, class: 'btn btn-primary btn-small' %> 
+    27: </div>
+    28: 
+    29: <% if logged_in? %>
+    30:   <div class='nav_item'>
+    31:     <%= link_to 'Log out', logout_path, class: 'btn btn-info btn-small' %>
+    32:   </div>
+  app/views/layouts/_navigation.html.erb:29:in `_app_views_layouts__navigation_html_erb__1137188846494323785_70122493966640'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__4052990896050823374_70122602629240'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.9ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:56:25 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (51.0ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.7ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.1ms)
+  Rendered posts/index.html.erb within layouts/application (88.6ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 111ms (Views: 100.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 15:56:28 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  Rendered posts/index.html.erb within layouts/application (24.3ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 16:02:41 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (45.6ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.5ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  Rendered posts/index.html.erb within layouts/application (82.1ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 112ms (Views: 94.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/posts/new" for 24.212.143.126 at 2014-08-19 16:02:42 +0000
+Processing by PostsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered shared/_errors.html.erb (0.1ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.erb (8.8ms)
+  Rendered posts/new.html.erb within layouts/application (11.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 16:02:44 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.5ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  Rendered posts/index.html.erb within layouts/application (24.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logout" for 24.212.143.126 at 2014-08-19 16:02:47 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 16:02:47 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  Rendered posts/index.html.erb within layouts/application (24.1ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 16:02:49 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  Rendered posts/index.html.erb within layouts/application (24.0ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 16:03:15 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (55.5ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.9ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.6ms)
+  Rendered posts/index.html.erb within layouts/application (93.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 116ms (Views: 105.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/login" for 24.212.143.126 at 2014-08-19 16:03:17 +0000
+Processing by SessionsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 24.212.143.126 at 2014-08-19 16:03:25 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eujKkK9Me0v42EyZa8JbkHidhiLK9LwqLfCoiooUceU=", "username"=>"Darren", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'Darren' LIMIT 1
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/
+Completed 302 Found in 97ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 16:03:25 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  Rendered posts/index.html.erb within layouts/application (23.1ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 16:04:23 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (45.3ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.5ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.1ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  Rendered posts/index.html.erb within layouts/application (82.0ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 105ms (Views: 94.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/logout" for 24.212.143.126 at 2014-08-19 16:04:26 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 16:04:26 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.8ms)
+  Rendered posts/index.html.erb within layouts/application (25.1ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/register" for 24.212.143.126 at 2014-08-19 16:04:34 +0000
+Processing by UsersController#new as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered users/_form.html.erb (3.9ms)
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 24.212.143.126 at 2014-08-19 16:04:39 +0000
+Processing by SessionsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 24.212.143.126 at 2014-08-19 16:04:45 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eujKkK9Me0v42EyZa8JbkHidhiLK9LwqLfCoiooUceU=", "username"=>"Larissa", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'Larissa' LIMIT 1[0m
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 113ms (Views: 16.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/login" for 24.212.143.126 at 2014-08-19 16:04:53 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eujKkK9Me0v42EyZa8JbkHidhiLK9LwqLfCoiooUceU=", "username"=>"Larissa", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'Larissa' LIMIT 1[0m
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/
+Completed 302 Found in 96ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 16:04:53 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.0ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.1ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.2ms)
+  Rendered posts/index.html.erb within layouts/application (22.5ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logout" for 24.212.143.126 at 2014-08-19 16:05:08 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 24.212.143.126 at 2014-08-19 16:05:08 +0000
+Processing by PostsController#index as HTML
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/_posts.html.erb (5.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/_posts.html.erb (4.4ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 6]]
+  Rendered categories/_category.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered categories/_category.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/_posts.html.erb (4.3ms)
+  Rendered posts/index.html.erb within layouts/application (24.2ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 1.9ms)
