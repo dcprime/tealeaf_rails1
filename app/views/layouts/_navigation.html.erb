@@ -1,3 +1,9 @@
+<% if logged_in? %>
+  <p class='pull-right'>
+    Logged in as: <%= current_user.username %>
+  </p>
+<% end %>
+
 <ul class="nav">
   <li>
     <%= link_to "Postit!", root_path, :class => 'brand' %>
@@ -13,6 +19,7 @@
         <%= link_to category.name, category_path(category) %>
       </li>
     <% end %>
+    <% if logged_in? %>
     <li class='divider'></li>
     <li>
       <%= link_to(new_category_path) do %>
@@ -20,13 +27,15 @@
         New Category
       <% end %>
     </li>
+    <% end %>
   </ul>
 </div>
+
+
+<% if logged_in? %>
 <div class='nav_item'>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-primary btn-small' %> 
 </div>
-
-<% if logged_in? %>
   <div class='nav_item'>
     <%= link_to 'Log out', logout_path, class: 'btn btn-info btn-small' %>
   </div>

@@ -1,13 +1,19 @@
-<p class='pull-right'>
-  [<%= link_to 'Edit post', edit_post_path(@post) %>]
-</p>
+<% if logged_in? %>
+  <% if current_user.id == @post.creator.id %>
+    <p class='pull-right'>
+      [<%= link_to 'Edit post', edit_post_path(@post) %>]
+    </p>
+  <% end %>
+<% end %>
 
 <p>
   <%= render @post.categories %>
 </p>
 
-<%= render 'shared/content_title', title: link_to(@post.title, "http://#{@post.url}") %>
-
+<%= render 'shared/content_title', title: @post.title %> 
+<p>
+  <h5><%= link_to @post.url, fix_url(@post.url) %></h5>
+</p>
 <p>
   <%= @post.description %>
 </p>
