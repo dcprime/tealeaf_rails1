@@ -37,12 +37,16 @@
 
 <br/>
 
-<%= form_for [@post, @comment] do |f| %>
-  <%= render 'shared/errors', obj: @comment %>
-  <div class='control-group'>
-    <%= f.label :body, 'Add a comment' %>
-    <%= f.text_area :body, rows: 3, class: 'span4' %>
-    <br/>
-    <%= f.submit 'Add Comment', class: 'btn brn-primary' %>
-  </div>
+<% if logged_in? %>
+  <%= form_for [@post, @comment] do |f| %>
+    <%= render 'shared/errors', obj: @comment %>
+    <div class='control-group'>
+      <%= f.label :body, 'Add a comment' %>
+      <%= f.text_area :body, rows: 3, class: 'span4' %>
+      <br/>
+      <%= f.submit 'Add Comment', class: 'btn brn-primary' %>
+    </div>
+  <% end %>
+<% else %>
+  <h4>Please log in to post a comment</h4>
 <% end %>
