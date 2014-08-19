@@ -8,4 +8,8 @@ module ApplicationHelper
     dt.strftime("%b %d, %Y at %r - %Z")
   end
   
+  def current_user
+    
+  end
+  
 end

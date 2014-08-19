@@ -2,9 +2,6 @@
   <li>
     <%= link_to "Postit!", root_path, :class => 'brand' %>
   </li>
-  <li>
-    <%= link_to 'link', '' %>
-  </li>
 </ul>
 <div class='btn-group nav_item'>
   <%= link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do %> 
@@ -26,5 +23,8 @@
   </ul>
 </div>
 <div class='nav_item'>
-  <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %> 
+  <%= link_to 'New Post', new_post_path, class: 'btn btn-primary btn-small' %> 
+</div>
+<div class='nav_item'>
+  <%= link_to 'Register', register_path, class: 'btn btn-success btn-small' %> 
 </div>
