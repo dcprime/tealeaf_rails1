@@ -1,7 +1,14 @@
 class UsersController < ApplicationController
   
+  before_action :require_user, only: [:edit, :update]
+  
   def new
     @user = User.new
+  end
+  
+  def show
+    @user = User.find(params[:id])
+    @posts = @user.posts
   end
   
   def create
@@ -17,7 +24,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-   
+    @user = User.find(session[:user_id])
   end
   
   def update

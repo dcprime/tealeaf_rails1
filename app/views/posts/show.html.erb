@@ -19,21 +19,7 @@
 </p>
 <hr/>
 
-<% if @post.comments.any? %>
-  <h4>Comments:</h4>
-  <% @post.comments.each do |comment| %>
-  <div class="row">
-    <div class='span8 well'>
-      <em>"<%= comment.body %>"</em>
-      <br/>
-      <span class='quiet'>posted by</span> <%= comment.creator.username %>
-      <small>on <%= display_datetime(comment.created_at) %></small>
-    </div>
-  </div>
-  <% end %>
-  <% else %>
-  <h4>No Comments</h4>
-<% end %>
+<%= render 'shared/comments', obj: @post %>
 
 <br/>
 
