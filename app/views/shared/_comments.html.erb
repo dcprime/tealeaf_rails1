@@ -1,18 +1,15 @@
 <% if obj.comments.any? %>
   <h4>Comments:</h4>
   <% obj.comments.each do |comment| %>
-  <div class="row">
     <div class='span8 well'>
       <em>"<%= comment.body %>"</em>
-      <% if obj == @user %> on <%= link_to(comment.post.title, post_path(comment.post)) %>
-          
-        <% end %>
+      <% if obj == @user %> on <%= link_to(comment.post.title, post_path(comment.post)) %>        
+      <% end %>
       <br/>
       <span class='quiet'>posted by</span> <%= link_to(comment.creator.username, user_path(comment.creator)) %>
       <small>on <%= display_datetime(comment.created_at) %></small>
     </div>
-  </div>
   <% end %>
-  <% else %>
+<% else %>
   <h4>No Comments</h4>
 <% end %>

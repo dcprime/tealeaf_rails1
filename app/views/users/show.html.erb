@@ -1,41 +1,26 @@
 <%= render 'shared/content_title', title: "Profile: #{@user.username}" %>
 
 <div class='well'>
-  <table style="width:150px">
-    <tr>
-      <td>
-        <strong>Username:</strong>
-      </td>
-      <td>
-        <%= @user.username %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>Time zone:</strong>
-      </td>
-      <td>
-        
-      </td>
-    </tr>
-  </table>
+  <dl class='dl-horizontal'>
+    <dt>Username:</dt>
+    <dd><%= @user.username %></dd>
+  </dl>
 </div>
 
 <h5><%= @user.username %>'s Activity</h5>
 
-<div class="post-cat-tabs">
-    <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#Posts">Posts (<%= @posts.count %>)</a></li>
-      <li><a data-toggle="tab" href="#Comments">Comments (<%= @user.comments.count %>)</a></li>
-    </ul>
-    <div class="tab-content">
-        <div id="Posts" class="tab-pane fade in active">
-          <% @posts.each do |post| %>
-            <%= render 'posts/posts', post: post %>
-          <% end %>
-        </div>
-        <div id="Comments" class="tab-pane fade">
-          <%= render 'shared/comments', obj: @user %>
-        </div>
-    </div>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#Posts">Posts (<%= @user.posts.count %>)</a></li>
+  <li><a data-toggle="tab" href="#Comments">Comments (<%= @user.comments.count %>)</a></li>
+</ul>
+<div class="tab-content">
+  <div id="Posts" class="tab-pane fade in active">
+    <% @user.posts.each do |post| %>
+    <%= render 'posts/posts', post: post %>
+    <% end %>
+  </div>
+  <div id="Comments" class="tab-pane fade">
+    <%= render 'shared/comments', obj: @user %>
+  </div>
 </div>
