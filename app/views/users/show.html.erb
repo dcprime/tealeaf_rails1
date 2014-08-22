@@ -16,7 +16,7 @@
 </ul>
 <div class="tab-content">
   <div id="Posts" class="tab-pane fade in active">
-    <% @user.posts.each do |post| %>
+    <% @user.posts.sort_by{|x| x.total_votes}.reverse.each do |post| %>
     <%= render 'posts/posts', post: post %>
     <% end %>
   </div>
