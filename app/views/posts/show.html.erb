@@ -12,14 +12,29 @@
 
 <%= render 'shared/content_title', title: @post.title %> 
 <p>
-  <h5><%= link_to @post.url, fix_url(@post.url) %></h5>
+  <h4><%= link_to @post.url, fix_url(@post.url) %></h4>
 </p>
 <p>
   <%= @post.description %>
 </p>
 <hr/>
 
-<%= render 'shared/comments', obj: @post %>
+<% if @post.comments.any? %>
+  <h4>Comments:</h4>
+  <% @post.comments.each do |comment| %>
+    <% unless comment.errors.any? %>
+      <div class='span8 well'>
+        <em>"<%= comment.body %>"</em>
+         on <%= link_to(comment.post.title, post_path(comment.post)) %>        
+        <br/>
+        <span class='quiet'>posted by</span> <%= link_to(comment.creator.username, user_path(comment.creator)) %>
+        <small>on <%= display_datetime(comment.created_at) %></small>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <h4>No Comments</h4>
+<% end %>
 
 <br/>
 
@@ -27,7 +42,7 @@
   <%= form_for [@post, @comment] do |f| %>
     <%= render 'shared/errors', obj: @comment %>
     <div class='control-group'>
-      <%= f.label :body, 'Add a comment' %>
+      <% f.label :body, 'Add a comment' %>
       <%= f.text_area :body, rows: 3, class: 'span4' %>
       <br/>
       <%= f.submit 'Add Comment', class: 'btn brn-primary' %>
