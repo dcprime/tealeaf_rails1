@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
   def vote
     comment = Comment.find(params[:id])
     @vote = Vote.create(voteable: comment, creator: current_user, vote: params[:vote])
-    if !@vote.save
+    if !@vote.valid?
       flash[:error] = "You already voted on that."
     end
     redirect_to :back
