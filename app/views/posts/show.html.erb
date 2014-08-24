@@ -19,35 +19,27 @@
 </p>
 <hr/>
 
+<% if logged_in? %>
+  <%= form_for [@post, @comment] do |f| %>
+    <%= render 'shared/errors', obj: @comment %>
+    <div class='control-group'>
+      <%= f.label :body, 'Add a comment' %>
+      <%= f.text_area :body, rows: 3, class: 'span4' %>
+    </div>
+      <%= f.submit 'Add Comment', class: 'btn btn-primary' %>
+  <% end %>
+<% else %>
+  <h4>Please log in to post a comment</h4>
+<% end %>
+
 <% if @post.comments.any? %>
   <h4>Comments:</h4>
-  <% @post.comments.each do |comment| %>
+<% @post.comments.all.sort_by{|x| x.total_votes}.reverse.each do |comment| %>
     <% unless comment.errors.any? %>
-      <div class='span8 well'>
-        <em>"<%= comment.body %>"</em>
-         on <%= link_to(comment.post.title, post_path(comment.post)) %>        
-        <br/>
-        <span class='quiet'>posted by</span> <%= link_to(comment.creator.username, user_path(comment.creator)) %>
-        <small>on <%= display_datetime(comment.created_at) %></small>
-      </div>
+<%= render 'comments/comment', comment: comment %>
     <% end %>
   <% end %>
 <% else %>
   <h4>No Comments</h4>
 <% end %>
 
-<br/>
-
-<% if logged_in? %>
-  <%= form_for [@post, @comment] do |f| %>
-    <%= render 'shared/errors', obj: @comment %>
-    <div class='control-group'>
-      <% f.label :body, 'Add a comment' %>
-      <%= f.text_area :body, rows: 3, class: 'span4' %>
-      <br/>
-      <%= f.submit 'Add Comment', class: 'btn brn-primary' %>
-    </div>
-  <% end %>
-<% else %>
-  <h4>Please log in to post a comment</h4>
-<% end %>

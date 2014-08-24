@@ -16,11 +16,22 @@
 </ul>
 <div class="tab-content">
   <div id="Posts" class="tab-pane fade in active">
-    <% @user.posts.sort_by{|x| x.total_votes}.reverse.each do |post| %>
-    <%= render 'posts/posts', post: post %>
+    <% if @user.comments.any? %>
+      <% @user.posts.sort_by{|x| x.total_votes}.reverse.each do |post| %>
+        <%= render 'posts/posts', post: post %>
+      <% end %>
+    <% else %>
+      <h4><%= @user.username %> has made no posts</h4>
     <% end %>
   </div>
   <div id="Comments" class="tab-pane fade">
-    <%= render 'shared/comments', obj: @user %>
+    <% if @user.comments.any? %>
+    <h4>Comments:</h4>
+    <% @user.comments.all.sort_by{|x| x.total_votes}.reverse.each do |comment| %>
+      <%= render 'comments/comment', comment: comment %>
+    <% end %>
+  <% else %>
+    <h4><%= @user.username %> has made no comments</h4>
+  <% end %>
   </div>
 </div>
