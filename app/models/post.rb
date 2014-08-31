@@ -9,6 +9,14 @@ class Post < ActiveRecord::Base
   validates :url, presence: true, uniqueness: true
   validates :description, presence: true
   
+  def vote_display
+    if self.total_votes == 1 || self.total_votes == -1
+      return " vote"
+    else
+      return " votes"
+    end
+  end
+  
   def total_votes
     up_votes - down_votes
   end
