@@ -5,6 +5,14 @@ class Comment < ActiveRecord::Base
   
   validates :body, presence: true, length: {minimum: 3}
   
+  def vote_display
+    if self.total_votes == 1 || self.total_votes == -1
+      return " vote"
+    else
+      return " votes"
+    end
+  end
+  
   def total_votes
     up_votes - down_votes
   end
