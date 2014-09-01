@@ -1,5 +1,5 @@
 <% if @vote.valid? %>
-  $('#post_<%= @post.id %>_votes').html('<%= @post.total_votes %><%= @post.vote_display %>');
+  $('#post_<%= @post.slug %>_votes').html('<%= @post.total_votes %><%= @post.vote_display %>');
 <% else %>
   alert('Sorry, you already voted on that.');
 <% end %>
