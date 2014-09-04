@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  include Voteable
+  include VoteableDarren
   include Slugable
   
   belongs_to :creator, foreign_key: 'user_id', class_name: 'User'
