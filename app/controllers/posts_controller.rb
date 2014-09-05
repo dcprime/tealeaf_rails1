@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   
   before_action :set_post, only: [:show, :edit, :update, :vote]
   before_action :require_user, except: [:index, :show]
+  before_action :check_role, only: [:edit, :update]
   
   def index
     @posts = Post.all.sort_by{|x| x.total_votes}.reverse
@@ -61,5 +62,13 @@ class PostsController < ApplicationController
   
   def set_post
     @post = Post.find_by(slug: params[:id])
+  end
+  
+  def check_role
+    access_denied unless creator? or current_user.admin?
+  end
+  
+  def creator?
+    current_user == @post.creator
   end
 end
