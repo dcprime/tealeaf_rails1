@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   include VoteableDarren
-  include Slugable
+  include SlugableDarren
   
   belongs_to :creator, foreign_key: 'user_id', class_name: 'User'
   has_many :comments

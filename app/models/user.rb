@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  include Slugable
+  include SlugableDarren
   
   has_many :posts
   has_many :comments

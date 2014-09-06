@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  include Slugable
+  include SlugableDarren
   
   has_many :post_categories
   has_many :posts, through: :post_categories

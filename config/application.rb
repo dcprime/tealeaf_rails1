@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 require 'voteable_darren'
+require 'slugable_darren'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

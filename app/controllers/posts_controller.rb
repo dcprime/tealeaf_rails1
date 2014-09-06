@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   before_action :set_post, only: [:show, :edit, :update, :vote]
-  before_action :require_user, except: [:index, :show]
+  before_action :require_user, except: [:index, :show, :fake]
   before_action :check_role, only: [:edit, :update]
   
   def index
@@ -10,6 +10,12 @@ class PostsController < ApplicationController
   
   def show
     @comment = Comment.new
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: @post }
+      format.xml  { render xml: @post }
+    end
   end
   
   def new
@@ -52,6 +58,12 @@ class PostsController < ApplicationController
       end
       format.js 
     end
+  end
+  
+  def fake
+    @company_name = Faker::Company.name + ' ' + Faker::Company.suffix
+    @company_phrase = Faker::Company.catch_phrase
+    @company_bs = Faker::Company.bs
   end
   
   private
