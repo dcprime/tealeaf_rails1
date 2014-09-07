@@ -16,6 +16,7 @@ gem 'bcrypt-ruby', '=3.0.1'
 gem 'voteable_darren', '=0.0.1'
 gem 'slugable_darren', '=0.0.0'
 gem 'faker', '=1.4.3'
+gem 'twilio-ruby'
 
 group :doc do
   gem 'sdoc', require: false
